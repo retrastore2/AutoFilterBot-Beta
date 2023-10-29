@@ -88,8 +88,7 @@
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=(https://github.com/retrastore2/AutoFilterBot-Beta)
-
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrMKN/PROFESSOR-BOT)
 ### Static Server
 * [![Watch](https://img.shields.io/static/v1?label=Watch&message=This&color=critical)](https://telegram.dog/aks_bots/6)
 
