@@ -86,7 +86,7 @@
 * Check [info.py](https://github.com/HansakaAnuhas-TG/AutoFilterBot-Beta/blob/main/info.py) for more optional variables
 
 
-## Deploy
+## Deploy to Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=(https://github.com/retrastore2/AutoFilterBot-Beta)
 
