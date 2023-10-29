@@ -30,9 +30,10 @@ async def start(client, message):
             await client.send_message(LOG_CHANNEL, script.NEW_GROUP_TXT.format(message.chat.title, message.chat.id, total, r_j))       
             await db.add_chat(message.chat.id, message.chat.title)
         wish = get_wish()
-        btn = [[
-            InlineKeyboardButton('⚡️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ⚡️', url=UPDATES_LINK),
-            InlineKeyboardButton('💡 Support Group 💡', url=SUPPORT_LINK)
+        btn = [[           
+            InlineKeyboardButton('ℹ️ 𝐀𝐈𝐃𝐄𝐒 ', url=f'https://t.me/ https://t.me/Pwofbot?start=help')
+            ],[
+            InlineKeyboardButton('📢 𝐍𝐨𝐮𝐯𝐞𝐥𝐥𝐞𝐬', url=f"https://t.me/cinemalakay_group")
         ]]
         await message.reply(text=f"<b>ʜᴇʏ {message.from_user.mention}, <i>{wish}</i>\nʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ??</b>", reply_markup=InlineKeyboardMarkup(btn))
         return 
@@ -47,17 +48,15 @@ async def start(client, message):
     
     if (len(message.command) != 2) or (len(message.command) == 2 and message.command[1] == 'start'):
         buttons = [[
-            InlineKeyboardButton("+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
-        ],[
-            InlineKeyboardButton('🔎 sᴇᴀʀᴄʜ ɪɴʟɪɴᴇ 🔍', switch_inline_query_current_chat='')
-        ],[
-            InlineKeyboardButton('⚡️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ⚡️', url=UPDATES_LINK),
-            InlineKeyboardButton('💡 Support Group 💡', url=SUPPORT_LINK)
-        ],[
-            InlineKeyboardButton('👨‍🚒 ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('📚 ᴀʙᴏᴜᴛ', callback_data='my_about'),
-            InlineKeyboardButton('👤 ᴏᴡɴᴇʀ', callback_data='my_owner')
-        ],[
+            InlineKeyboardButton("➕️ AJOUTEZ-MOI À VOS GROUPES ➕", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+            ],[
+            InlineKeyboardButton("🔎 𝐑𝐄𝐂𝐇𝐄𝐑𝐂𝐇𝐄𝐑", switch_inline_query_current_chat=''), 
+            InlineKeyboardButton("🤖 𝐍𝐨𝐮𝐯𝐞𝐥𝐥𝐞𝐬", url="https://t.me/StarPlus_Cinema")
+            ],[      
+            InlineKeyboardButton("ℹ️ 𝐀𝐈𝐃𝐄𝐒", callback_data="help"),
+            InlineKeyboardButton("❤️ 𝐀 𝐏𝐑𝐎𝐏𝐎𝐒 ❤️", callback_data="about")
+            ],[
+            InlineKeyboardButton('Watch Tutorial', url='https://www.youtube.com/@ZMO-Tech')
             InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ʙʏ ʙᴏᴛ 💰', callback_data='earn')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -112,7 +111,7 @@ async def start(client, message):
         btn = [[
             InlineKeyboardButton("🧿 Verify 🧿", url=link)
         ],[
-            InlineKeyboardButton('🗳 Tutorial 🗳', url=TUTORIAL)
+            InlineKeyboardButton('🗳 Tutorial 🗳', url='https://www.youtube.com/@ZMO-Tech')
         ]]
         await message.reply("You not verified today! Kindly verify now. 🔐", reply_markup=InlineKeyboardMarkup(btn), protect_content=True)
         return
@@ -133,9 +132,9 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}")
             ],[
-                InlineKeyboardButton('⚡️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ⚡️', url=UPDATES_LINK),
-                InlineKeyboardButton('💡 Support Group 💡', url=SUPPORT_LINK)
+            InlineKeyboardButton('ℹ️ 𝐀𝐈𝐃𝐄𝐒 ', url=f'https://t.me/ https://t.me/Pwofbot?start=help')
             ],[
+            InlineKeyboardButton('📢 𝐍𝐨𝐮𝐯𝐞𝐥𝐥𝐞𝐬', url=f"https://t.me/cinemalakay_group")
                 InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
             ]]
             await client.send_cached_media(
@@ -161,12 +160,14 @@ async def start(client, message):
     )
     btn = [[
         InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file_id}")
-    ],[
-        InlineKeyboardButton('⚡️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ⚡️', url=UPDATES_LINK),
-        InlineKeyboardButton('💡 Support Group 💡', url=SUPPORT_LINK)
-    ],[
-        InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
-    ]]
+    [[
+                InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}")
+            ],[
+            InlineKeyboardButton('ℹ️ 𝐀𝐈𝐃𝐄𝐒 ', url=f'https://t.me/ https://t.me/Pwofbot?start=help')
+            ],[
+            InlineKeyboardButton('📢 𝐍𝐨𝐮𝐯𝐞𝐥𝐥𝐞𝐬', url=f"https://t.me/cinemalakay_group")
+                InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+            ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
